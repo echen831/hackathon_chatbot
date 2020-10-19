@@ -26,9 +26,20 @@ module.exports = function(controller) {
                     {
                         title: 'Email',
                         payload: 'email',
+                    },
+
+                    { title: "Skills",
+                      payload: 'skills'
                     }
                 ]
             });
+
+            // await bot.reply(message, {
+            //     text: 'Do you want to know my skills',
+            //     quick_replies: [
+
+            //     ]
+            // })
         });
 
         // controller.hears(new RegExp('quick'), 'message', async (bot, message) => {

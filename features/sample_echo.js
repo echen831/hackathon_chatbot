@@ -9,6 +9,21 @@
      skills: ["Ruby", "Javascript", "React"]
  }
 
+quickReplies = [
+    {
+        title: 'Name',
+        payload: 'name'
+    },
+    {
+        title: 'Email',
+        payload: 'email'
+    },
+    {
+        title: 'Skills',
+        payload: 'skills'
+    },
+
+]
 
 module.exports = function(controller) {
 
@@ -17,11 +32,25 @@ module.exports = function(controller) {
     });
 
     controller.hears('name', ['message'], async(bot, message) => {
-        await bot.reply(message, 'My name is ' + DATA.name)
+
+        await bot.reply(message, {
+                text: 'My name is ' + DATA.name,
+                quick_replies: quickReplies.filter( reply => reply.payload !== message.text)
+        })
     })
 
     controller.hears('email', ['message'], async (bot, message) => {
-        await bot.reply(message, 'My email is ' + DATA.email)
+        await bot.reply(message, {
+            text: 'My email is ' + DATA.email,
+            quick_replies: quickReplies.filter(reply => reply.payload !== message.text)
+        })
+    })
+
+    controller.hears('skills', ["message"], async (bot, message) => {
+        await bot.reply(message, {
+           text: "I know " + DATA.skills,
+            quick_replies: quickReplies.filter(reply => reply.payload !== message.text)
+        })
     })
 
     // controller.hears(['Hello', 'Hi', 'Hey', 'Yo', 'Aloha'], ['message'], async(bot, message) => {
