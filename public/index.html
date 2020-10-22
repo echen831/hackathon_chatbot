@@ -1,63 +1,55 @@
-<html>
-    <head>
-        <title>!Howard</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
-        <script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.4/dist/showdown.min.js"></script>
-        <link rel="stylesheet" href="/css/styles.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body >
-      <div class="wrapper">
+<!DOCTYPE html>
+<html lang="en">
 
-        <div id="message_window">
-            <div class="disconnected">
-                Disconnected... reconnecting!
-            </div>
-            <div class="offline">
-                Offline! Reload to reconnect.
-            </div>
-            <div class="powered_by">
-              Powered by <a href="https://botkit.ai" target="_blank" title="Building Blocks for Building Bots"><img src="/botkit_icon.png" width="15" height="15" alt="Botkit Logo" /> Botkit</a>
-            </div>
-            <section>
-                <div id="message_list">
-                    <div id="message_template">
-                        <div class="message {{message.type}}">
-                            {{#if message.isTyping}}
-                              <div class="typing-indicator">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                              </div>
-                            {{/if}}
-                            {{{message.html}}}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>SimplyDev</title>
+</head>
 
-                            {{#if message.open_link}}
-                              <a href="{{{message.open_link}}}" target="_blank" class="button_message">{{#if message.link_title}}{{message.link_title}}{{else}}{{message.open_link}}{{/if}}</a>
-                            {{/if}}
-                        </div>
-                        {{#message.files}}
-                          <div class="file_attachment">
-                          {{#if image}}
-                            <img src="{{{url}}}" alt="{{{url}}}" />
-                          {{else}}
-                            <a href="{{{url}}}" title="{{{url}}}">{{{url}}}</a>
-                          {{/if}}
-                          </div>
-                        {{/message.files}}
-                    </div>
+<body>
+    <header>
+        <div class="logo-container">
+            <a class="home" href="./index.html">
+                <img src="./img/logo.svg" alt="logo" />
+                <h1 class="logo">SimplyDev</h4>
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <!-- <li><a class="nav-link" href="#">About Us</a></li> -->
+                <!-- <li><a class="nav-link" href="#">Products</a></li>
+                 <li><a class="nav-link" href="#">Contact</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="presentation">
+            <div class="introduction">
+                <div class="intro-text">
+                    <h1>Learn about some amazing developers</h1>
+                    <p>
+
+                    </p>
                 </div>
-            </section>
-            <div id="message_replies">
+                <div class="cta">
+                    <a href="developers.html">
+                        <button class="cta-select">Chat with us</button>
+                    </a>
+                </div>
             </div>
-            <footer>
-                <form onsubmit="Botkit.send(Botkit.input.value, event)">
-                    <input type="text" autocomplete="off" id="messenger_input" placeholder="Type here..." />
-                    <button type="submit">Send</button>
-                </form>
-            </footer>
-        </div>
-        </div>
-        <script src="/client.js"></script>
-    </body>
+            <div class="cover">
+                <img src="./img/dev.png" alt="dev-laptop">
+            </div>
+        </section>
+
+        <img class="big-circle" src="./img/big-eclipse.svg" alt="">
+        <img class="mid-circle" src="./img/mid-eclipse.svg" alt="">
+        <img class="small-circle" src="./img/small-eclipse.svg" alt="">
+    </main>
+
+</body>
+
 </html>
