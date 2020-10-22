@@ -1,7 +1,7 @@
 const RA_RESUME = {
     firstName: "Rasheeq",
     lastName: "Ahmed",
-    email: 'ra@gmail.com',
+    email: 'contact@rasheeqahmed.com',
     skills: ["Ruby", "Javascript", "React", "PosgreSQL", "Redux", "CSS", "HTML"],
     hobbies: ["Programming", "Cooking", "Traveling"],
     education: ["App Academy"]
