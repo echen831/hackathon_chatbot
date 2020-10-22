@@ -9,7 +9,7 @@ function runSpeechRecognition() {
   }
 
   recognition.onspeechend = function () {
-    action.innerHTML = "<small>stopped listening, hope you are done...</small>";
+    action.innerHTML = "<small>stopped listening</small>";
     recognition.stop();
   }
 
@@ -18,4 +18,6 @@ function runSpeechRecognition() {
     output.value = transcript
     output.classList.remove("hide");
   };
+  
+  recognition.start();
 }
