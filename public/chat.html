@@ -54,11 +54,14 @@
             <footer>
                 <form onsubmit="Botkit.send(Botkit.input.value, event)">
                     <input type="text" autocomplete="off" id="messenger_input" placeholder="Type here..." />
+                    <p><button type="button" onclick="runSpeechRecognition()"><i class="fas fa-microphone"></i></button> &nbsp; <span
+                        id="action"></span></p>
                     <button type="submit">Send</button>
                 </form>
             </footer>
         </div>
         </div>
+        <script src="speech_to_text.js"></script>
         <script src="/client.js"></script>
     </body>
 </html>
