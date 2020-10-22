@@ -14,33 +14,33 @@ module.exports = function(controller) {
 
         console.log('Loading sample web features...');
 
-        controller.hears(['Hi', 'Hello', 'Hey'], 'message', async (bot, message) => {
+        // controller.hears(['Hi', 'Hello', 'Hey'], 'message', async (bot, message) => {
 
-            await bot.reply(message, {
-                text: 'My name is !Howard.  What do you want to know from me?',
-                quick_replies: [
-                    {
-                        title: 'Name',
-                        payload: 'name',
-                    },
-                    {
-                        title: 'Email',
-                        payload: 'email',
-                    },
+        //     await bot.reply(message, {
+        //         text: 'My name is !Howard.  What do you want to know from me?',
+        //         quick_replies: [
+        //             {
+        //                 title: 'Name',
+        //                 payload: 'name',
+        //             },
+        //             {
+        //                 title: 'Email',
+        //                 payload: 'email',
+        //             },
 
-                    { title: "Skills",
-                      payload: 'skills'
-                    }
-                ]
-            });
+        //             { title: "Skills",
+        //               payload: 'skills'
+        //             }
+        //         ]
+        //     });
 
-            // await bot.reply(message, {
-            //     text: 'Do you want to know my skills',
-            //     quick_replies: [
+        //     await bot.reply(message, {
+        //         text: 'Do you want to know my skills',
+        //         quick_replies: [
 
-            //     ]
-            // })
-        });
+        //         ]
+        //     })
+        // });
 
         // controller.hears(new RegExp('quick'), 'message', async (bot, message) => {
 
