@@ -84,7 +84,7 @@ module.exports = function(controller) {
         })
     })
 
-    controller.hears(['ruby', 'javascript', 'react', 'css', 'html'], ["message"], async (bot, message) => {
+    controller.hears(['ruby', 'javascript', 'react', 'css', 'html', 'postgresql'], ["message"], async (bot, message) => {
         await bot.reply(message, {
             text: "I have 1 year of experience in " + message.text,
             quick_replies: [...RA_QUICK_REPLIES.skills, ...RA_QUICK_REPLIES.topLevel]
