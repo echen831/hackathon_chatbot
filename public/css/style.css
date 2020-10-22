@@ -20,7 +20,7 @@ button {
 header{
 	display: flex;
 	/* background: lightblue; */
-	width: 90%;
+	width: 80%;
 	height: 10vh;
 	margin: auto;
 	align-items: center;
@@ -67,7 +67,7 @@ nav {
 
 .presentation{
 	display: flex;
-	width: 90%;
+	width: 80%;
 	margin: auto;
 	min-height: 80vh;
 	align-items: center;
