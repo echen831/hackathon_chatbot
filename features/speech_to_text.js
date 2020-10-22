@@ -7,9 +7,15 @@ function runSpeechRecognition() {
   recognition.onstart = function () {
     action.innerHTML = "<small>listening, please speak...</small>";
   }
-  
+
   recognition.onspeechend = function () {
     action.innerHTML = "<small>stopped listening, hope you are done...</small>";
     recognition.stop();
   }
+
+  recognition.onresult = function (event) {
+    var transcript = event.results[0][0].transcript;
+    output.value = transcript
+    output.classList.remove("hide");
+  };
 }
