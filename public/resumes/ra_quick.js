@@ -55,6 +55,10 @@ module.exports = RA_QUICK_REPLIES = {
         {
             title: 'HTML',
             payload: 'html'
+        },
+        {
+            title: 'PostgreSQL',
+            payload: 'postgresql'
         }
 
     ],

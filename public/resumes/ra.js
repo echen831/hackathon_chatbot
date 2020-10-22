@@ -2,8 +2,9 @@ const RA_RESUME = {
     firstName: "Rasheeq",
     lastName: "Ahmed",
     email: 'ra@gmail.com',
-    skills: ["Ruby", "Javascript", "React", "Redux", "CSS", "HTML"],
-    hobbies: ["Programming", "Basketball", "Music"]
+    skills: ["Ruby", "Javascript", "React", "PosgreSQL", "Redux", "CSS", "HTML"],
+    hobbies: ["Programming", "Cooking", "Traveling"],
+    education: ["App Academy"]
 }
 
 module.exports = RA_RESUME;
