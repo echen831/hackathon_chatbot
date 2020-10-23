@@ -70,8 +70,16 @@ module.exports = RA_QUICK_REPLIES = {
 
     hobbies: [
         {
-            title: 'Basketball',
-            payload: 'basketball'
+            title: 'Programming',
+            payload: 'programming'
+        },
+        {
+            title: 'Cooking',
+            payload: 'cocking'
+        },
+        {
+            title: 'Traveling',
+            payload: 'traveling'
         }
     ]
 }

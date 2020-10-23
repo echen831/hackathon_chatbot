@@ -80,7 +80,7 @@ module.exports = function(controller) {
     controller.hears('hobbies', ["message"], async(bot, message) => {
         await bot.reply(message, {
             text: "My favorite things to do are " + RA_RESUME.hobbies,
-            quick_replies: RA_QUICK_REPLIES.topLevel
+            quick_replies: [...RA_QUICK_REPLIES.hobbies, ...RA_QUICK_REPLIES.topLevel]
         })
     })
 
@@ -88,6 +88,13 @@ module.exports = function(controller) {
         await bot.reply(message, {
             text: "I have 1 year of experience in " + message.text,
             quick_replies: [...RA_QUICK_REPLIES.skills, ...RA_QUICK_REPLIES.topLevel]
+        })
+    })
+
+    controller.hears(['programming', 'traveling', 'cooking'], ["message"], async (bot, message) => {
+        await bot.reply(message, {
+            text: "I love " + message.text,
+            quick_replies: [...RA_QUICK_REPLIES.hobbies, ...RA_QUICK_REPLIES.topLevel]
         })
     })
 
