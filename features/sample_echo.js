@@ -91,6 +91,13 @@ module.exports = function(controller) {
         })
     })
 
+    controller.hears(['education'], ["message"], async (bot, message) => {
+        await bot.reply(message, {
+            text: "I studied full stack development at " + RA_RESUME.education,
+            quick_replies: [...RA_QUICK_REPLIES.skills, ...RA_QUICK_REPLIES.topLevel]
+        })
+    })
+
     // controller.hears(['Hello', 'Hi', 'Hey', 'Yo', 'Aloha'], ['message'], async(bot, message) => {
     //     await bot.reply(message, message.text[0].toUpperCase() + message.text.slice(1) + ' Human! My name is ' + DATA.name)
     // })

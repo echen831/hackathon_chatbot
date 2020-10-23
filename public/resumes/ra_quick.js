@@ -15,6 +15,11 @@ module.exports = RA_QUICK_REPLIES = {
         {
             title: "Hobbies",
             payload: "hobbies"
+        },
+
+        {
+            title: "Education",
+            payload: "education"
         }
     ],
 
