@@ -75,7 +75,7 @@ module.exports = RA_QUICK_REPLIES = {
         },
         {
             title: 'Cooking',
-            payload: 'cocking'
+            payload: 'cooking'
         },
         {
             title: 'Traveling',
