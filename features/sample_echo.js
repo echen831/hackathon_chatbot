@@ -43,7 +43,7 @@ module.exports = function(controller) {
     controller.hears(['Hi', 'Hello', 'Hey', "Aloha", "Nihao"], 'message', async (bot, message) => {
 
         await bot.reply(message, {
-            text: message.text + '!  My name is ' + RA_RESUME.firstName + " " + RA_RESUME.lastName + '. What do you want to know from me?',
+            text: message.text.toUpperCase() + '!  My name is ' + RA_RESUME.firstName + " " + RA_RESUME.lastName + '. What do you want to know from me?',
             quick_replies: RA_QUICK_REPLIES.topLevel
         });
     });
