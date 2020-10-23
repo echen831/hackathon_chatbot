@@ -93,7 +93,7 @@ module.exports = function(controller) {
 
     controller.hears(['programming', 'traveling', 'cooking'], ["message"], async (bot, message) => {
         await bot.reply(message, {
-            text: "I love " + message.text,
+            text: "I love " + message.text + "!",
             quick_replies: [...RA_QUICK_REPLIES.hobbies, ...RA_QUICK_REPLIES.topLevel]
         })
     })
