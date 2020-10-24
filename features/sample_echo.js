@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Licensed under the MIT License.
  */
-
+const { Botkit, BotkitConversation } = require("botkit");
 const RA_RESUME  = require("../public/resumes/ra.js");
 const RA_QUICK_REPLIES = require("../public/resumes/ra_quick.js");
 
@@ -31,6 +31,12 @@ const RA_QUICK_REPLIES = require("../public/resumes/ra_quick.js");
 
 
 module.exports = function(controller) {
+
+    let convo = new BotkitConversation('myConvo', controller);
+
+    convo.say("Hello my name is Eric");
+    controller.dialogSet.add(convo);
+
 
 
     controller.on('message', async (bot, message) => {
