@@ -87,7 +87,7 @@ module.exports = function(controller) {
         })
     })
 
-    controller.hears('hobbies', ["message"], async(bot, message) => {
+    controller.hears(['hobbies', 'hobby', 'like to do'], ["message"], async(bot, message) => {
         await bot.reply(message, {
             text: "My favorite things to do are " + RA_RESUME.hobbies,
             quick_replies: [...RA_QUICK_REPLIES.hobbies, ...RA_QUICK_REPLIES.topLevel]
@@ -108,7 +108,7 @@ module.exports = function(controller) {
         })
     })
 
-    controller.hears(['education'], ["message"], async (bot, message) => {
+    controller.hears(['education', 'school'], ["message"], async (bot, message) => {
         await bot.reply(message, {
             text: "I studied full stack development at " + RA_RESUME.education,
             quick_replies: [...RA_QUICK_REPLIES.topLevel]
@@ -119,9 +119,9 @@ module.exports = function(controller) {
     //     await bot.reply(message, message.text[0].toUpperCase() + message.text.slice(1) + ' Human! My name is ' + DATA.name)
     // })
 
-    // controller.hears('.*', 'message', async (bot, message) => {
-    //     await bot.reply(message, 'Sorry I have not learned what ' + message.text + " means.");
-    // });
+    controller.hears('.*', 'message', async (bot, message) => {
+        await bot.reply(message, 'Sorry I have not learned what ' + message.text + " means.");
+    });
 
     // controller.on('event', async (bot, message) => {
     //     await bot.reply(message, 'I received an event of type ' + message.type);
