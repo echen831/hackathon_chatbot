@@ -32,23 +32,26 @@ const RA_QUICK_REPLIES = require("../public/resumes/ra_quick.js");
 
 module.exports = function(controller) {
 
-    let convo = new BotkitConversation('myConvo', controller);
+    const GREETING = 'greeting';
+    const greet = new BotkitConversation(GREETING, controller);
+    greet.say({text: "Hello, My name is Rasheeq Ahmed.  What do you want to know from me?", quick_replies: RA_QUICK_REPLIES.topLevel});
+    controller.addDialog(greet);
 
-    convo.say("Hello my name is Eric");
-    convo.addAction('typing');
-    controller.dialogSet.add(convo);
-
-
-
-    controller.on('message', async (bot, message) => {
-        await bot.reply(message, 'I heard a message!');
+    controller.on(['hello', 'welcome_back'], async (bot, message) => {
+        await bot.beginDialog(GREETING);
     });
+
+
+    // controller.on('message', async (bot, message) => {
+    //     await bot.reply(message, 'I heard a message!');
+    //     await bot.beginDialog(GREETING);
+    // });
 
     controller.hears('sample','message, direct_message', async (bot, message) => {
         await bot.reply(message, 'I heard a sample message.');
     });
-    controller.hears(['Hi', 'Hello', 'Hey', "Aloha", "Nihao"], 'message', async (bot, message) => {
-
+    controller.hears(['Hi','Hey', "Aloha", "Nihao"], 'message', async (bot, message) => {
+        await bot.beginDialog('typing');
         await bot.reply(message, {
             text: message.text.toUpperCase() + '!  My name is ' + RA_RESUME.firstName + " " + RA_RESUME.lastName + '. What do you want to know from me?',
             quick_replies: RA_QUICK_REPLIES.topLevel
@@ -116,9 +119,9 @@ module.exports = function(controller) {
     //     await bot.reply(message, message.text[0].toUpperCase() + message.text.slice(1) + ' Human! My name is ' + DATA.name)
     // })
 
-    controller.hears('.*', 'message', async (bot, message) => {
-        await bot.reply(message, 'Sorry I have not learned what ' + message.text + " means.");
-    });
+    // controller.hears('.*', 'message', async (bot, message) => {
+    //     await bot.reply(message, 'Sorry I have not learned what ' + message.text + " means.");
+    // });
 
     // controller.on('event', async (bot, message) => {
     //     await bot.reply(message, 'I received an event of type ' + message.type);
