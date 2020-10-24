@@ -35,6 +35,7 @@ module.exports = function(controller) {
     let convo = new BotkitConversation('myConvo', controller);
 
     convo.say("Hello my name is Eric");
+    convo.addAction('typing');
     controller.dialogSet.add(convo);
 
 
