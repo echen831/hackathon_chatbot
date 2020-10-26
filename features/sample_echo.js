@@ -50,19 +50,24 @@ module.exports = function(controller) {
     controller.hears('sample','message, direct_message', async (bot, message) => {
         await bot.reply(message, 'I heard a sample message.');
     });
-    controller.hears(['Hi','Hey', "Aloha", "Nihao"], 'message', async (bot, message) => {
+    controller.hears(['Hi','Hey', "Hello", "Aloha", "Nihao"], 'message', async (bot, message) => {
         await bot.beginDialog('typing');
         await bot.reply(message, {
-            text: message.text.toUpperCase() + '!  My name is ' + RA_RESUME.firstName + " " + RA_RESUME.lastName + '. What do you want to know from me?',
+            text: message.text[0].toUpperCase() + message.text.slice(1) + '!  My name is ' + RA_RESUME.firstName + " " + RA_RESUME.lastName + '. What do you want to know from me?',
             quick_replies: RA_QUICK_REPLIES.topLevel
         });
     });
 
     controller.hears('name', ['message'], async (bot, message) => {
-
         await bot.reply(message, {
                 text: 'My name is ' + RA_RESUME.firstName + " " + RA_RESUME.lastName, 
                 quick_replies: RA_QUICK_REPLIES.topLevel
+        })
+    })
+
+    controller.hears('google', ['message'], async (bot, message) => {
+        await bot.reply(message, {
+            text: "www.google.com"
         })
     })
 
